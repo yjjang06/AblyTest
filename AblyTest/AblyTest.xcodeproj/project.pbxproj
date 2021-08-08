@@ -15,6 +15,13 @@
 		C183CB0126BFC9320074FDE8 /* ZzimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB0026BFC9320074FDE8 /* ZzimViewController.swift */; };
 		C183CB0326BFD0D30074FDE8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB0226BFD0D30074FDE8 /* TabBarController.swift */; };
 		C183CB0526BFD6310074FDE8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB0426BFD6310074FDE8 /* Constants.swift */; };
+		C183CB0E26C003680074FDE8 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB0D26C003680074FDE8 /* HomeList.swift */; };
+		C183CB1026C003890074FDE8 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB0F26C003890074FDE8 /* Banner.swift */; };
+		C183CB1426C0039F0074FDE8 /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB1326C0039F0074FDE8 /* Goods.swift */; };
+		C183CB1626C004200074FDE8 /* HomeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB1526C004200074FDE8 /* HomeListViewModel.swift */; };
+		C183CB1926C004810074FDE8 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB1826C004810074FDE8 /* APIHelper.swift */; };
+		C183CB1D26C015560074FDE8 /* GoodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB1C26C015560074FDE8 /* GoodsCollectionViewCell.swift */; };
+		C183CB1F26C015640074FDE8 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB1E26C015640074FDE8 /* BannerCollectionViewCell.swift */; };
 		D9E68769F6D222AB0708A197 /* Pods_AblyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228BCA58291DE1D22F76802C /* Pods_AblyTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +39,13 @@
 		C183CB0026BFC9320074FDE8 /* ZzimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZzimViewController.swift; sourceTree = "<group>"; };
 		C183CB0226BFD0D30074FDE8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C183CB0426BFD6310074FDE8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C183CB0D26C003680074FDE8 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
+		C183CB0F26C003890074FDE8 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		C183CB1326C0039F0074FDE8 /* Goods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
+		C183CB1526C004200074FDE8 /* HomeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewModel.swift; sourceTree = "<group>"; };
+		C183CB1826C004810074FDE8 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		C183CB1C26C015560074FDE8 /* GoodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C183CB1E26C015640074FDE8 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,7 @@
 				C183CAFD26BFC9080074FDE8 /* ViewControllers */,
 				C183CAFC26BFC9000074FDE8 /* ViewModels */,
 				C183CAFB26BFC8F50074FDE8 /* Models */,
+				C183CB1726C004560074FDE8 /* Network */,
 				C183CAE726BFBF210074FDE8 /* AppDelegate.swift */,
 				C183CAED26BFBF210074FDE8 /* Main.storyboard */,
 				C183CAF026BFBF230074FDE8 /* Assets.xcassets */,
@@ -91,6 +106,9 @@
 		C183CAFB26BFC8F50074FDE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C183CB0D26C003680074FDE8 /* HomeList.swift */,
+				C183CB0F26C003890074FDE8 /* Banner.swift */,
+				C183CB1326C0039F0074FDE8 /* Goods.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -98,6 +116,7 @@
 		C183CAFC26BFC9000074FDE8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C183CB1526C004200074FDE8 /* HomeListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -105,11 +124,29 @@
 		C183CAFD26BFC9080074FDE8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C183CB1B26C015190074FDE8 /* Views */,
 				C183CB0226BFD0D30074FDE8 /* TabBarController.swift */,
 				C183CAFE26BFC9280074FDE8 /* HomeViewController.swift */,
 				C183CB0026BFC9320074FDE8 /* ZzimViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C183CB1726C004560074FDE8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C183CB1826C004810074FDE8 /* APIHelper.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C183CB1B26C015190074FDE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C183CB1E26C015640074FDE8 /* BannerCollectionViewCell.swift */,
+				C183CB1C26C015560074FDE8 /* GoodsCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E35FE27C3AEF7495D69EB9BB /* Pods */ = {
@@ -235,10 +272,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C183CB1D26C015560074FDE8 /* GoodsCollectionViewCell.swift in Sources */,
+				C183CB1626C004200074FDE8 /* HomeListViewModel.swift in Sources */,
 				C183CB0526BFD6310074FDE8 /* Constants.swift in Sources */,
 				C183CAE826BFBF210074FDE8 /* AppDelegate.swift in Sources */,
+				C183CB1426C0039F0074FDE8 /* Goods.swift in Sources */,
+				C183CB0E26C003680074FDE8 /* HomeList.swift in Sources */,
+				C183CB1F26C015640074FDE8 /* BannerCollectionViewCell.swift in Sources */,
 				C183CB0326BFD0D30074FDE8 /* TabBarController.swift in Sources */,
+				C183CB1026C003890074FDE8 /* Banner.swift in Sources */,
 				C183CAFF26BFC9280074FDE8 /* HomeViewController.swift in Sources */,
+				C183CB1926C004810074FDE8 /* APIHelper.swift in Sources */,
 				C183CB0126BFC9320074FDE8 /* ZzimViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

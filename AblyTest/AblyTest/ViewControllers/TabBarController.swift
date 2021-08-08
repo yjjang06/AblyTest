@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-        self.tabBar.tintColor = ConstantColor.tabbarTintColor
+        self.tabBar.tintColor = ConstantColor.tabbarSelectedColor
         self.tabBar.unselectedItemTintColor = ConstantColor.tabbarUnselectedColor
         self.tabBar.isTranslucent = false
     }
