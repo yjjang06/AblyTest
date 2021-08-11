@@ -87,6 +87,7 @@ class HomeViewController: UIViewController {
     }
 }
 
+//MARK:- UICollectionView Delegate, DataSource
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Sections.SectionCount.rawValue
@@ -109,6 +110,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoodsCellIdentifier, for: indexPath) as! GoodsCollectionViewCell
+            let index = indexPath.item
+            let goods = viewModel.goods(at: index)
+            cell.itemIndex = index
+            cell.delegate = self
+            cell.setGoodsImage(url: goods?.image)
+            cell.setRateText(actualPrice: goods?.actualPrice, price: goods?.price)
+            cell.setPriceText(goods?.price)
+            cell.setGoodsName(goods?.name)
+            cell.setIsNewHidden((goods?.isNew ?? false) ? false : true)
+            cell.setSellCountText(goods?.sellCount)
             return cell
         }
     }
@@ -128,5 +139,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return .leastNormalMagnitude
+    }
+}
+
+//MARK:- GoodsCollectionViewCellDelegate
+extension HomeViewController: GoodsCollectionViewCellDelegate {
+    func goodsCollectionViewCellDidSelectZzim(index: Int) {
+        
     }
 }
