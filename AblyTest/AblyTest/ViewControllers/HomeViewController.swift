@@ -140,6 +140,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return .leastNormalMagnitude
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if viewModel.goodsCount() == 0 {
+            return
+        }
+        
+        // 마지막 셀이 보여지는 위치로 스크롤 됐을 때 next 호출
+        let lastIndexPath = IndexPath(item: viewModel.goodsCount() - 1, section: Sections.Goods.rawValue)
+        let visible = collectionView.indexPathsForVisibleItems
+        if visible.count > 0, visible.contains(lastIndexPath) {
+            viewModel.next()
+        }
+    }
 }
 
 //MARK:- GoodsCollectionViewCellDelegate
