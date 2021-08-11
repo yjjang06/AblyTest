@@ -151,7 +151,7 @@ class GoodsCollectionViewCell: UICollectionViewCell {
         if let a = actualPrice, let p = price {
             let rate = 100 - Int(CGFloat(p) / (CGFloat(a)) * 100)
             let text = String(format: "%d%%", rate)
-            rateLabel.attributedText = getAttrString(text: text, letterSpacing: -0.6)
+            rateLabel.attributedText = AttributedString.getAttrString(text: text, letterSpacing: -0.6)
         }
         else {
             rateLabel.attributedText = nil
@@ -161,7 +161,7 @@ class GoodsCollectionViewCell: UICollectionViewCell {
     func setPriceText(_ price: Int?) {
         if let p = price {
             let text = decimalFommattingStr(p)
-            priceLabel.attributedText = getAttrString(text: text, letterSpacing: -0.6)
+            priceLabel.attributedText = AttributedString.getAttrString(text: text, letterSpacing: -0.6)
         }
         else {
             priceLabel.attributedText = nil
@@ -169,7 +169,7 @@ class GoodsCollectionViewCell: UICollectionViewCell {
     }
     
     func setGoodsName(_ name: String?) {
-        nameLabel.attributedText = getAttrString(text: name, letterSpacing: -0.4)
+        nameLabel.attributedText = AttributedString.getAttrString(text: name, letterSpacing: -0.4)
     }
     
     func setIsNewHidden(_ isHidden: Bool) {
@@ -179,7 +179,7 @@ class GoodsCollectionViewCell: UICollectionViewCell {
     func setSellCountText(_ count: Int?) {
         if let c = count, let countText = decimalFommattingStr(c) {
             let text = String(format: "%@개 구매중", countText)
-            countLabel.attributedText = getAttrString(text: text, letterSpacing: -0.4)
+            countLabel.attributedText = AttributedString.getAttrString(text: text, letterSpacing: -0.4)
         }
     }
     
@@ -195,18 +195,6 @@ class GoodsCollectionViewCell: UICollectionViewCell {
     }
     
     //MARK:- Util
-    private func getAttrString(text: String?, letterSpacing: CGFloat) -> NSAttributedString? {
-        if let t = text, t.count > 0 {
-            let attrStr = NSMutableAttributedString(string: t)
-            attrStr.addAttribute(NSAttributedString.Key.kern,
-                                 value: letterSpacing,
-                                 range: NSRange(location: 0,
-                                                length: attrStr.length))
-            return attrStr
-        }
-        return nil
-    }
-    
     private func decimalFommattingStr(_ n: Int) -> String? {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal

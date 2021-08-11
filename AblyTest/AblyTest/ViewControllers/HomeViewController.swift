@@ -111,6 +111,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == Sections.Banner.rawValue {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCellIdentifier, for: indexPath) as! BannerCollectionViewCell
+            if viewModel.bannerDataChanged {
+                viewModel.bannerDataChanged = false
+                cell.setBannerList(viewModel.bannerList())
+            }
             return cell
         }
         else {

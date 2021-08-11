@@ -22,6 +22,8 @@ class HomeListViewModel: NSObject, HomeListViewModelProtocol {
     
     private var homeList: HomeList?
     
+    var bannerDataChanged: Bool = false
+    
     private var didChange: (() -> Void)?
     func dataChanged(didChange: @escaping () -> Void) {
         self.didChange = didChange
@@ -69,7 +71,9 @@ class HomeListViewModel: NSObject, HomeListViewModelProtocol {
     func firstList() {
         self.homeList = nil
         self.isLast = false
-
+        
+        self.bannerDataChanged = true
+        
         if self.isLoading {
             return
         }
