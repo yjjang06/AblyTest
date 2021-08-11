@@ -48,6 +48,11 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = ConstantColor.naviBarTintColor
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -112,6 +117,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoodsCellIdentifier, for: indexPath) as! GoodsCollectionViewCell
             let index = indexPath.item
             let goods = viewModel.goods(at: index)
+            var isZzim: Bool = false
+            if goods != nil {
+                isZzim = ZzimListSingleton.shared.isZzimGoods(id: goods!.id)
+            }
             cell.itemIndex = index
             cell.delegate = self
             cell.setGoodsImage(url: goods?.image)
@@ -120,6 +129,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.setGoodsName(goods?.name)
             cell.setIsNewHidden((goods?.isNew ?? false) ? false : true)
             cell.setSellCountText(goods?.sellCount)
+            cell.setIsZzim(isZzim)
             return cell
         }
     }
@@ -157,7 +167,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 //MARK:- GoodsCollectionViewCellDelegate
 extension HomeViewController: GoodsCollectionViewCellDelegate {
-    func goodsCollectionViewCellDidSelectZzim(index: Int) {
-        
+    func goodsCollectionViewCellDidSelectZzim(cell: GoodsCollectionViewCell, index: Int) {
+        if let goods = viewModel.goods(at: index) {
+            let isZzim = ZzimListSingleton.shared.isZzimGoods(id: goods.id)
+            if isZzim {
+                ZzimListSingleton.shared.removeZzimGoods(goods: goods)
+            }
+            else {
+                ZzimListSingleton.shared.addZzimGoods(goods: goods)
+            }
+            cell.setIsZzim(!isZzim)
+        }
     }
 }

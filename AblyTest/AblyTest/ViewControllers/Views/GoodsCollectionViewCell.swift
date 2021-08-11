@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 
 @objc protocol GoodsCollectionViewCellDelegate {
-    @objc optional func goodsCollectionViewCellDidSelectZzim(index: Int)
+    @objc optional func goodsCollectionViewCellDidSelectZzim(cell: GoodsCollectionViewCell, index: Int)
 }
 
 class GoodsCollectionViewCell: UICollectionViewCell {
@@ -183,10 +183,14 @@ class GoodsCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func setIsZzim(_ isZzim: Bool) {
+        zzimButton.isSelected = isZzim
+    }
+    
     //MARK:- Button actions
     @objc private func touchedZzimButton() {
         if itemIndex != nil {
-            delegate?.goodsCollectionViewCellDidSelectZzim?(index: itemIndex!)
+            delegate?.goodsCollectionViewCellDidSelectZzim?(cell: self, index: itemIndex!)
         }
     }
     

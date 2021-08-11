@@ -22,6 +22,7 @@
 		C183CB1926C004810074FDE8 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB1826C004810074FDE8 /* APIHelper.swift */; };
 		C183CB1D26C015560074FDE8 /* GoodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB1C26C015560074FDE8 /* GoodsCollectionViewCell.swift */; };
 		C183CB1F26C015640074FDE8 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C183CB1E26C015640074FDE8 /* BannerCollectionViewCell.swift */; };
+		C1F744D426C3EEB100C23F1C /* ZzimListSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F744D326C3EEB100C23F1C /* ZzimListSingleton.swift */; };
 		D9E68769F6D222AB0708A197 /* Pods_AblyTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228BCA58291DE1D22F76802C /* Pods_AblyTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		C183CB1826C004810074FDE8 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		C183CB1C26C015560074FDE8 /* GoodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C183CB1E26C015640074FDE8 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		C1F744D326C3EEB100C23F1C /* ZzimListSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZzimListSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				C183CB1526C004200074FDE8 /* HomeListViewModel.swift */,
+				C1F744D326C3EEB100C23F1C /* ZzimListSingleton.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				C183CB1F26C015640074FDE8 /* BannerCollectionViewCell.swift in Sources */,
 				C183CB0326BFD0D30074FDE8 /* TabBarController.swift in Sources */,
 				C183CB1026C003890074FDE8 /* Banner.swift in Sources */,
+				C1F744D426C3EEB100C23F1C /* ZzimListSingleton.swift in Sources */,
 				C183CAFF26BFC9280074FDE8 /* HomeViewController.swift in Sources */,
 				C183CB1926C004810074FDE8 /* APIHelper.swift in Sources */,
 				C183CB0126BFC9320074FDE8 /* ZzimViewController.swift in Sources */,
